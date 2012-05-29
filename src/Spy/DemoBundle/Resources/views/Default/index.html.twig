@@ -7,6 +7,9 @@
     {% else %}
         There is no action for this user.
     {% endfor %}
+
+    <h1>Users</h1>
+    {% include "SpyDemoBundle:Default:context.html.twig" %}
 {% endblock %}
 
 {% set code = code(_self) %}

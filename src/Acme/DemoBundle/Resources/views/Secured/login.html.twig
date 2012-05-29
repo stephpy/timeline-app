@@ -1,11 +1,9 @@
-{% extends 'AcmeDemoBundle::layout.html.twig' %}
+{% extends 'SpyDemoBundle::layout.html.twig' %}
 
 {% block content %}
     <h1>Login</h1>
 
-    <p>
-        Choose between two default users: <em>user/userpass</em> <small>(ROLE_USER)</small> or <em>admin/adminpass</em> <small>(ROLE_ADMIN)</small>
-    </p>
+    {% include "SpyDemoBundle:Default:context.html.twig" %}
 
     {% if error %}
         <div class="error">{{ error.message }}</div>
