@@ -1,3 +1,7 @@
+timeline_demo:
+    resource: "@SpyDemoBundle/Controller/DefaultController.php"
+    type:     annotation
+
 _welcome:
     pattern:  /
     defaults: { _controller: AcmeDemoBundle:Welcome:index }

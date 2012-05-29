@@ -1,0 +1,12 @@
+{% extends "SpyDemoBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>Actions</h1>
+    {% for action in wall %}
+        {{ timeline_render(action) }}
+    {% else %}
+        There is no action for this user.
+    {% endfor %}
+{% endblock %}
+
+{% set code = code(_self) %}
