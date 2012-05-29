@@ -10,3 +10,6 @@ web/bundles/*
 
 # Configuration files
 app/config/parameters.ini
+
+composer.lock
+composer.phar
