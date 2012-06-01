@@ -20,14 +20,26 @@ class User
         5 => 'walter',
     );
 
-    public $user;
+    public $username;
 
     /**
-     * @param CoreUser $user user
+     * @param mixed $user user
      */
-    public function __construct(CoreUser $user)
+    public function __construct($user)
     {
-        $this->user = $user;
+        if ($user instanceof CoreUser) {
+            $this->username = $user->getUserName();
+        } else {
+            $this->username = $user;
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->username;
     }
 
     /**
@@ -35,7 +47,7 @@ class User
      */
     public function getId()
     {
-        return array_search($this->user->getUsername(), self::$listUsers);
+        return array_search($this->getUsername(), self::$listUsers);
     }
 
     /**
@@ -43,6 +55,21 @@ class User
      */
     public function getUserName()
     {
-        return $this->user->getUserName();
+        return $this->username;
+    }
+
+    /**
+     * @param integer $id id
+     *
+     * @return User|null
+     */
+    static public function find($id)
+    {
+        if (!isset(self::$listUsers[$id])) {
+
+            return null;
+        }
+
+        return new self(self::$listUsers[$id]);
     }
 }

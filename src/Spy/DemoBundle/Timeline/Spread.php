@@ -14,7 +14,7 @@ use Highco\TimelineBundle\Model\TimelineAction;
  */
 class Spread implements SpreadInterface
 {
-    CONST USER_CLASS = "\Spy\DemoBundle\Model\User";
+    CONST USER_CLASS = "Spy\DemoBundle\Model\User";
     /**
      * {@inheritdoc}
      */
@@ -37,10 +37,6 @@ class Spread implements SpreadInterface
                 break;
             case 'steven':
                 $entries[] = Entry::create(self::USER_CLASS, 1); // chuck
-                $entries[] = Entry::create(self::USER_CLASS, 2); // steven
-                $entries[] = Entry::create(self::USER_CLASS, 3); // vic
-                $entries[] = Entry::create(self::USER_CLASS, 4); // jack
-                $entries[] = Entry::create(self::USER_CLASS, 5); // walter
                 break;
             case 'vic':
                 $entries[] = Entry::create(self::USER_CLASS, 1); // chuck

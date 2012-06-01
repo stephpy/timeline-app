@@ -10,7 +10,7 @@
     <h1>Timeline</h1>
 
     {% for action in wall %}
-        {{ timeline_render(action) }}
+        {{ timeline_render(action) }}<br />
     {% else %}
         There is no action for this user.
     {% endfor %}

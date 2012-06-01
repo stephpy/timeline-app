@@ -5,6 +5,7 @@ highco_timeline:
     timeline_action_manager: highco.timeline_action_manager.default
     filters:
         - highco.timeline.filter.duplicate_key # Filter duplicate keys
+        - spy_timeline_demo_filter # hydrate user (subject)
         # On this app, we cannot use data_hydrator, because we do not use entity actually
         #- highco.timeline.filter.data_hydrator  # Hydrate data from doctrine to get TimelineAction instead of ID
     spread:
