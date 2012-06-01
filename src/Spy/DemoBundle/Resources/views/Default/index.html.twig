@@ -1,12 +1,23 @@
 {% extends "SpyDemoBundle::layout.html.twig" %}
 
 {% block content %}
-    <h1>Actions</h1>
+    {% if app.session.hasFlash('success') %}
+        <div class="alert alert-success">
+            {{ app.session.getFlash('success') }}
+        </div>
+    {% endif %}
+
+    <h1>Timeline</h1>
+
     {% for action in wall %}
         {{ timeline_render(action) }}
     {% else %}
         There is no action for this user.
     {% endfor %}
+
+
+    <h1>Actions</h1>
+    {% include "SpyDemoBundle:Default:actions.html.twig" %}
 
     <h1>Users</h1>
     {% include "SpyDemoBundle:Default:context.html.twig" %}
