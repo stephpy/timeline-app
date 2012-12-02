@@ -14,8 +14,11 @@ security:
         in_memory:
             memory:
                 users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    chuck:  { password: chuckpass, roles: [ 'ROLE_USER' ] }
+                    steven:  { password: stevenpass, roles: [ 'ROLE_USER' ] }
+                    vic:  { password: vicpass, roles: [ 'ROLE_USER' ] }
+                    jack:  { password: jackcpass, roles: [ 'ROLE_USER' ] }
+                    walter:  { password: walterpass, roles: [ 'ROLE_USER' ] }
 
     firewalls:
         dev:

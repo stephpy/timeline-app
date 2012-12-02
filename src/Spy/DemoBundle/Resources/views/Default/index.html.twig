@@ -1,0 +1,45 @@
+{#% block directComplement_component %}
+{% spaceless %}
+    {% set type = type|default('verb') %}
+    {{ block('action_component') }}
+{% endspaceless %}
+{% endblock %}
+
+{% for action in timeline %}
+    {% timeline_action_theme action _self %}
+
+    {{ timeline_component_render(action,'subject') }}
+
+    {{ timeline_component_render(action,'verb') }}
+
+    {{ timeline_component_render(action, 'directComplement') }}
+    <br />
+{% endfor %#}
+
+{% extends "SpyDemoBundle::layout.html.twig" %}
+
+{% block content %}
+    {% if app.session.hasFlash('success') %}
+        <div class="alert alert-success">
+            {{ app.session.getFlash('success') }}
+        </div>
+    {% endif %}
+
+    <h1>Timeline</h1>
+
+    {% for action in timeline %}
+        {{ timeline_render(action) }}<br />
+    {% else %}
+        There is no action for this user.
+    {% endfor %}
+
+
+    <h1>Actions</h1>
+    {% include "SpyDemoBundle:Default:actions.html.twig" %}
+
+    <h1>Users</h1>
+    {% include "SpyDemoBundle:Default:context.html.twig" %}
+{% endblock %}
+
+{% set code = code(_self) %}
+

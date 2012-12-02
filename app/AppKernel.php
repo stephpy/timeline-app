@@ -21,7 +21,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Spy\TimelineBundle\SpyTimelineBundle(),
             new Acme\DemoBundle\AcmeDemoBundle(),
-            new Acme\TimelineBundle\AcmeTimelineBundle(),
+            new Spy\DemoBundle\SpyDemoBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
         );
 

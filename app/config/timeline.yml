@@ -4,17 +4,13 @@ spy_timeline:
         orm:
             object_manager: doctrine.orm.entity_manager
             classes:
-                timeline:  Acme\TimelineBundle\Entity\Timeline
-                action:    Acme\TimelineBundle\Entity\Action
-                component: Acme\TimelineBundle\Entity\Component
-                action_component: Acme\TimelineBundle\Entity\ActionComponent
-        #odm:
-        #    object_manager: doctrine.odm.entity_manager
-        #redis:
-        #    client: snc_redis.default
+                timeline:  Spy\DemoBundle\Entity\Timeline
+                action:    Spy\DemoBundle\Entity\Action
+                component: Spy\DemoBundle\Entity\Component
+                action_component: Spy\DemoBundle\Entity\ActionComponent
 
-    notifiers: []
-        #- spy_timeline.unread_notifications
+    notifiers:
+        - spy_timeline.unread_notifications
 
     filters:
         duplicate_key:
@@ -23,12 +19,8 @@ spy_timeline:
             priority: 20
             locators:
                 - spy_timeline.filter.data_hydrator.locator.doctrine
-
     spread:
         on_subject: true          # Spread each action on subject too
         on_global_context: true   # Spread automatically on global context
         deployer: spy_timeline.spread.deployer.default
         delivery: immediate
-
-    #render:
-    #    path: toto
