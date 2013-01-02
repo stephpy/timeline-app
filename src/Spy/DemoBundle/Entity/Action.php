@@ -19,7 +19,12 @@ class Action extends BaseAction
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Spy\DemoBundle\Entity\ActionComponent", mappedBy="action", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="ActionComponent", mappedBy="action", cascade={"persist"})
      */
     protected $actionComponents;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Timeline", mappedBy="action")
+     */
+    protected $timelines;
 }

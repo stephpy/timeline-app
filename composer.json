@@ -19,7 +19,7 @@
         "jms/security-extra-bundle": "1.4.*",
         "jms/di-extra-bundle": "1.3.*",
         "snc/redis-bundle": "2.1.x-dev",
-        "stephpy/TimelineBundle": "2.0.x-dev"
+        "stephpy/TimelineBundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

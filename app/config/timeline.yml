@@ -18,7 +18,7 @@ spy_timeline:
         data_hydrator:
             priority: 20
             locators:
-                - spy_timeline.filter.data_hydrator.locator.doctrine
+                - spy_timeline.filter.data_hydrator.locator.doctrine_orm
     spread:
         on_subject: true          # Spread each action on subject too
         on_global_context: true   # Spread automatically on global context

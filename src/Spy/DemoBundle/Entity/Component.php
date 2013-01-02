@@ -17,10 +17,4 @@ class Component extends BaseComponent
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Spy\DemoBundle\Entity\ActionComponent", mappedBy="component")
-     */
-    protected $actionComponents;
-
 }

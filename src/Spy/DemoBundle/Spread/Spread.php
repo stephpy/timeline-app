@@ -2,10 +2,10 @@
 
 namespace Spy\DemoBundle\Spread;
 
-use Spy\TimelineBundle\Spread\SpreadInterface;
-use Spy\TimelineBundle\Model\ActionInterface;
-use Spy\TimelineBundle\Spread\Entry\EntryCollection;
-use Spy\TimelineBundle\Spread\Entry\EntryUnaware;
+use Spy\Timeline\Spread\SpreadInterface;
+use Spy\Timeline\Model\ActionInterface;
+use Spy\Timeline\Spread\Entry\EntryCollection;
+use Spy\Timeline\Spread\Entry\EntryUnaware;
 
 /**
  * Spread

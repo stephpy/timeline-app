@@ -13,13 +13,18 @@ class Timeline extends BaseTimeline
 {
     /**
      * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Action")
      * @ORM\JoinColumn(name="action_id", referencedColumnName="id")
      */
     protected $action;
 
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity="Spy\DemoBundle\Entity\Component")
      * @ORM\JoinColumn(name="subject_id", referencedColumnName="id", onDelete="CASCADE")
      */
