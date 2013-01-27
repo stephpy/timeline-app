@@ -1,0 +1,33 @@
+body {
+    padding-top: 60px;
+}
+
+.user {
+    font-size: 0.9em;
+    height: 90px;
+    padding-left: 80px;
+    margin-bottom: 10px;
+}
+
+.user p.ident {
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.user.chuck {
+    background-image:url("/img/chuck.jpg");
+    background-repeat:no-repeat;
+}
+
+.user.vic {
+    background-image:url("/img/vic.jpg");
+    background-repeat:no-repeat;
+}
+
+.user.walter {
+    background-image:url("/img/walter.jpg");
+    background-repeat:no-repeat;
+}

@@ -6,41 +6,13 @@ security:
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
 
-    role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
-
     providers:
         in_memory:
             memory:
-                users:
-                    chuck:  { password: chuckpass, roles: [ 'ROLE_USER' ] }
-                    steven:  { password: stevenpass, roles: [ 'ROLE_USER' ] }
-                    vic:  { password: vicpass, roles: [ 'ROLE_USER' ] }
-                    jack:  { password: jackcpass, roles: [ 'ROLE_USER' ] }
-                    walter:  { password: walterpass, roles: [ 'ROLE_USER' ] }
+                users: []
 
     firewalls:
-        dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-        login:
-            pattern:  ^/demo/secured/login$
-            security: false
-
         secured_area:
-            pattern:    ^/demo/secured/
-            form_login:
-                check_path: /demo/secured/login_check
-                login_path: /demo/secured/login
-            logout:
-                path:   /demo/secured/logout
-                target: /demo/
-            #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
-
-    access_control:
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
-        #- { path: ^/_internal/secure, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
+            pattern: ^/
+            anonymous: ~
+            http_basic: ~

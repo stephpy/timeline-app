@@ -11,12 +11,8 @@ class AcmeDemoExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.xml');
-    }
-
-    public function getAlias()
-    {
-        return 'acme_demo';
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config/services'));
+        $loader->load('form.xml');
+        $loader->load('spread.xml');
     }
 }

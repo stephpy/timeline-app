@@ -1,0 +1,11 @@
+<h2>Add an action</h2>
+<form class="form" method="post" action="{{ path('home') }}">
+    {{ form_row(form.subject) }}
+    {{ form_row(form.verb) }}
+    {{ form_row(form.complementObject, {'label': 'You can add an object complement'}) }}
+    {{ form_row(form.complementText, {'label': 'Or use free text area'}) }}
+    {{ form_rest(form) }}
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Add action</button>
+    </div>
+</form>
