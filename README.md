@@ -4,6 +4,8 @@ Timeline demo application
 - [Standalone library](https://github.com/stephpy/timeline)
 - [Symfony2 Bundle](https://github.com/stephpy/TimelineBundle)
 
+![screenshot](https://raw.github.com/stephpy/timeline-app/master/web/img/screenshot.png)
+
 Use it ?
 
 ```
