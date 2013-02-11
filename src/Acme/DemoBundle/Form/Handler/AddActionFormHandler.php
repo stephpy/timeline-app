@@ -76,7 +76,7 @@ class AddActionFormHandler
         switch ($model) {
             case 'User':
                 $entity = $this->objectManager->getRepository('AcmeDemoBundle:User')
-                    ->find($identifier);
+                    ->findOneByUsername($identifier);
                 break;
             case 'Car':
                 list($brand, $model) = $identifier = explode('-', $identifier);

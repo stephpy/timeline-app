@@ -1,12 +1,12 @@
 spy_timeline:
     drivers:
-        orm:
-            object_manager: doctrine.orm.entity_manager
+        odm:
+            object_manager: doctrine.odm.mongodb.document_manager
             classes:
-                timeline:         Acme\DemoBundle\Entity\Timeline
-                action:           Acme\DemoBundle\Entity\Action
-                component:        Acme\DemoBundle\Entity\Component
-                action_component: Acme\DemoBundle\Entity\ActionComponent
+                timeline:         Acme\DemoBundle\Document\Timeline
+                action:           Acme\DemoBundle\Document\Action
+                component:        Acme\DemoBundle\Document\Component
+                action_component: Acme\DemoBundle\Document\ActionComponent
 
     notifiers:
         - spy_timeline.unread_notifications

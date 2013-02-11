@@ -35,7 +35,7 @@ class DefaultController extends Controller
      */
     public function timelineAction(Request $request)
     {
-        $user = $this->get('doctrine.orm.entity_manager')
+        $user = $this->get('doctrine.odm.mongodb.document_manager')
             ->getRepository('AcmeDemoBundle:User')
             ->findOneByUsername($request->get('subject', 'chuck'));
 

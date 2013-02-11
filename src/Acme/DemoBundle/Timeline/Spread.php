@@ -18,8 +18,8 @@ use Acme\DemoBundle\Entity\User;
  */
 class Spread implements SpreadInterface
 {
-    CONST USER_CLASS = 'Acme\DemoBundle\Entity\User';
-    CONST CAR_CLASS = 'Acme\DemoBundle\Entity\User';
+    CONST USER_CLASS = 'Acme\DemoBundle\Document\User';
+    CONST CAR_CLASS = 'Acme\DemoBundle\Document\Car';
 
     /**
      * {@inheritdoc}
@@ -34,9 +34,9 @@ class Spread implements SpreadInterface
      */
     public function process(ActionInterface $action, EntryCollection $coll)
     {
-        $chuck  = new EntryUnaware(self::USER_CLASS, 1);
-        $vic    = new EntryUnaware(self::USER_CLASS, 2);
-        $walter = new EntryUnaware(self::USER_CLASS, 3);
+        $chuck  = new EntryUnaware(self::USER_CLASS, '5111a4f4531e17820b000000');
+        $vic    = new EntryUnaware(self::USER_CLASS, '5111a502531e17a418000000');
+        $walter = new EntryUnaware(self::USER_CLASS, '5111a510531e17e60c000000');
 
         $coll->add($chuck); // chuck is added becase he's aware of ALL
 
@@ -48,14 +48,14 @@ class Spread implements SpreadInterface
 
         if ($this->walterIsInAction($action) || $this->isKick($action) || $this->isCook($action)) {
             // if vic is subject, does not show ...
-            if (!($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 2)) {
+            if (!($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 'vic')) {
                 $coll->add($vic);
             }
         }
 
         if ($this->vicIsInAction($action) || $this->hasCar($action) || $this->isDrive($action) || $this->isCook($action)) {
             // if walter is subject, does not show ...
-            if (!($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 3)) {
+            if (!($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 'walter')) {
                 $coll->add($walter);
             }
         }
@@ -74,8 +74,8 @@ class Spread implements SpreadInterface
         $subject    = $action->getSubject();
         $complement = $action->getComponent('complement');
 
-        return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 2) ||
-            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 2);
+        return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 'vic') ||
+            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 'vic');
 
     }
 
@@ -84,8 +84,8 @@ class Spread implements SpreadInterface
         $subject    = $action->getSubject();
         $complement = $action->getComponent('complement');
 
-        return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 3) ||
-            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 3);
+        return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 'walter') ||
+            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 'walter');
     }
 
     public function isDrive($action)

@@ -1,24 +1,26 @@
 <?php
 
-namespace Acme\DemoBundle\Entity;
+namespace Acme\DemoBundle\Document;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="car")
+ * @ODM\Document
  */
 class Car
 {
     /**
-     * @ORM\Id
-     * @ORM\Column(type="string")
+     * @ODM\Id
+     */
+    private $id;
+
+    /**
+     * @ODM\Field(type="string")
      */
     private $brand;
 
     /**
-     * @ORM\Id
-     * @ORM\Column(type="string")
+     * @ODM\Field(type="string")
      */
     private $model;
 
@@ -71,5 +73,27 @@ class Car
     public function getModel()
     {
         return $this->model;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id id
+     *
+     * @return Car
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 }

@@ -1,34 +1,31 @@
 <?php
 
-namespace Acme\DemoBundle\Entity;
+namespace Acme\DemoBundle\Document;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="user")
+ * @ODM\Document
  */
 class User
 {
     /**
-     * @ORM\Column(type="string")
+     * @ODM\Field(type="string")
      */
     private $username;
 
     /**
-     * @ORM\Column(type="string")
+     * @ODM\Field(type="string")
      */
     private $firstname;
 
     /**
-     * @ORM\Column(type="string")
+     * @ODM\Field(type="string")
      */
     private $lastname;
 
     /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ODM\Id
      */
     private $id;
 

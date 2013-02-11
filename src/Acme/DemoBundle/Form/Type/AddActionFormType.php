@@ -17,9 +17,9 @@ class AddActionFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $components = array(
-            'User:1' => '[User] Chuck Norris',
-            'User:2' => '[User] Vic Mac Mkey',
-            'User:3' => '[User] Walter White',
+            'User:chuck' => '[User] Chuck Norris',
+            'User:vic' => '[User] Vic Mac Mkey',
+            'User:walter' => '[User] Walter White',
             'Car:alfaromeo-159'  => '[Car] Alfa romeo 159',
             'Car:bugatti-veyron'  => '[Car] Bugatti Veyron',
         );

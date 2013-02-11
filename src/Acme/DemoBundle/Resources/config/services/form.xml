@@ -6,7 +6,7 @@
 
     <services>
         <service id="acme.timeline.add_action.handler" class="Acme\DemoBundle\Form\Handler\AddActionFormHandler">
-            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="doctrine.odm.mongodb.document_manager" />
             <argument type="service" id="spy_timeline.action_manager" />
         </service>
     </services>
