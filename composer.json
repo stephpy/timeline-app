@@ -1,6 +1,6 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "name": "stephpy/timeline-app",
+    "description": "Demo app for timeline library",
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -18,9 +18,9 @@
         "sensio/generator-bundle": "2.2.*",
         "jms/security-extra-bundle": "1.4.*",
         "jms/di-extra-bundle": "1.3.*",
-        "mopa/bootstrap-bundle": "dev-master",
-        "twitter/bootstrap": "dev-master",
-        "stephpy/TimelineBundle": "dev-master"
+        "mopa/bootstrap-bundle": "~2.3.0",
+        "twitter/bootstrap": "dev-master@dev",
+        "stephpy/TimelineBundle": "dev-master@dev"
     },
     "scripts": {
         "post-install-cmd": [
@@ -39,7 +39,6 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "dev",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web"

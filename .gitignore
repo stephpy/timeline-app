@@ -1,8 +1,9 @@
-web/bundles/
-app/bootstrap.php.cache
+/web/bundles
+/app/bootstrap.php.cache
 app/cache/*
 app/logs/*
-build/
-vendor
-bin
-composer.phar
+/build
+/vendor
+/bin
+/*.phar
+/*.lock
