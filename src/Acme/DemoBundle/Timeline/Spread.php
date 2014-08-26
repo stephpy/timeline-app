@@ -71,7 +71,6 @@ class Spread implements SpreadInterface
         return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 2) ||
             (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 2)
         ;
-
     }
 
     public function walterIsInAction($action)
@@ -80,7 +79,8 @@ class Spread implements SpreadInterface
         $complement = $action->getComponent('complement');
 
         return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 3) ||
-            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 3);
+            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 3)
+        ;
     }
 
     public function isDrive($action)
