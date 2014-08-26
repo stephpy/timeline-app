@@ -43,51 +43,51 @@
                 </div>
             </div>
 
-        <p><strong>Users list</strong></p>
-        <div class="usersContext">
-            <div class="user chuck">
-                <p class="ident">Chuck Norris</p>
-                <p><small>Chuck is own everybody, he's aware about ALL actions because he's ... chuck.</small></p>
-                <i class="icon-user"></i>Vic <i class="icon-ok"></i> |
-                <i class="icon-user"></i>Walter <i class="icon-ok"></i> |
-                Own <i class="icon-ok"></i> |
-                Drive <i class="icon-ok"></i> |
-                Kick <i class="icon-ok"></i> |
-                Cook <i class="icon-ok"></i>
+            <p><strong>Users list</strong></p>
+            <div class="usersContext">
+                <div class="user chuck">
+                    <p class="ident">Chuck Norris</p>
+                    <p><small>Chuck is own everybody, he's aware about ALL actions because he's ... chuck.</small></p>
+                    <i class="icon-user"></i>Vic <i class="icon-ok"></i> |
+                    <i class="icon-user"></i>Walter <i class="icon-ok"></i> |
+                    Own <i class="icon-ok"></i> |
+                    Drive <i class="icon-ok"></i> |
+                    Kick <i class="icon-ok"></i> |
+                    Cook <i class="icon-ok"></i>
+                </div>
             </div>
-        </div>
-        <div class="usersContext">
-            <div class="user vic">
-                <p class="ident">Vic Mac Key</p>
-                <p><small>Vic loves kick guy who cook drugs !</small></p>
-                <i class="icon-user"></i>Chuck <i class="icon-remove"></i> |
-                <i class="icon-user"></i>Walter <i class="icon-ok"></i> |
-                Own <i class="icon-remove"></i> |
-                Drive <i class="icon-remove"></i> |
-                Kick <i class="icon-ok"></i> |
-                Cook <i class="icon-ok"></i>
+            <div class="usersContext">
+                <div class="user vic">
+                    <p class="ident">Vic Mac Key</p>
+                    <p><small>Vic loves kick guy who cook drugs !</small></p>
+                    <i class="icon-user"></i>Chuck <i class="icon-remove"></i> |
+                    <i class="icon-user"></i>Walter <i class="icon-ok"></i> |
+                    Own <i class="icon-remove"></i> |
+                    Drive <i class="icon-remove"></i> |
+                    Kick <i class="icon-ok"></i> |
+                    Cook <i class="icon-ok"></i>
+                </div>
             </div>
-        </div>
-        <div class="usersContext">
-            <div class="user walter">
-                <p class="ident">Walter White</p>
-                <p><small>Walter cooks methamphetamine and loves driving cars. He's aware of police actions and “He's the one who knocks“</small></p>
-                <i class="icon-user"></i>Chuck <i class="icon-remove"></i> |
-                <i class="icon-user"></i>Vic <i class="icon-ok"></i> |
-                Own <i class="icon-remove"></i> |
-                Drive <i class="icon-ok"></i> |
-                Kick <i class="icon-remove"></i> |
-                Cook <i class="icon-ok"></i>
+            <div class="usersContext">
+                <div class="user walter">
+                    <p class="ident">Walter White</p>
+                    <p><small>Walter cooks methamphetamine and loves driving cars. He's aware of police actions and “He's the one who knocks“</small></p>
+                    <i class="icon-user"></i>Chuck <i class="icon-remove"></i> |
+                    <i class="icon-user"></i>Vic <i class="icon-ok"></i> |
+                    Own <i class="icon-remove"></i> |
+                    Drive <i class="icon-ok"></i> |
+                    Kick <i class="icon-remove"></i> |
+                    Cook <i class="icon-ok"></i>
+                </div>
             </div>
+            <div style="clear: both"></div>
+            <hr />
+            {% include "AcmeDemoBundle:Default:form.html.twig" with {'form': form } %}
         </div>
-        <div style="clear: both"></div>
-        <hr />
-        {% include "AcmeDemoBundle:Default:form.html.twig" with {'form': form } %}
+        <div class="span5">
+            {% render controller('AcmeDemoBundle:Default:timeline', {'subject': 'chuck'}) %}
+            {% render controller('AcmeDemoBundle:Default:timeline', {'subject': 'vic'}) %}
+            {% render controller('AcmeDemoBundle:Default:timeline', {'subject': 'walter'}) %}
+        </div>
     </div>
-    <div class="span5">
-        {% render controller('AcmeDemoBundle:Default:timeline', {'subject': 'chuck'}) %}
-        {% render controller('AcmeDemoBundle:Default:timeline', {'subject': 'vic'}) %}
-        {% render controller('AcmeDemoBundle:Default:timeline', {'subject': 'walter'}) %}
-    </div>
-</div>
 {% endblock %}

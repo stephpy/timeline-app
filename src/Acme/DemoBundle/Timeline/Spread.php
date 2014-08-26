@@ -10,12 +10,6 @@ use Spy\Timeline\Spread\Entry\Entry;
 use Acme\DemoBundle\Entity\Car;
 use Acme\DemoBundle\Entity\User;
 
-/**
- * Spread
- *
- * @uses SpreadInterface
- * @author Stephane PY <py.stephane1@gmail.com>
- */
 class Spread implements SpreadInterface
 {
     CONST USER_CLASS = 'Acme\DemoBundle\Entity\User';
@@ -75,7 +69,8 @@ class Spread implements SpreadInterface
         $complement = $action->getComponent('complement');
 
         return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 2) ||
-            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 2);
+            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 2)
+        ;
 
     }
 

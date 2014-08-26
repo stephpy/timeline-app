@@ -7,11 +7,6 @@ use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Spy\Timeline\Driver\ActionManagerInterface;
 
-/**
- * AddActionFormHandler
- *
- * @author Stephane PY <py.stephane1@gmail.com>
- */
 class AddActionFormHandler
 {
     /**
@@ -76,17 +71,21 @@ class AddActionFormHandler
         switch ($model) {
             case 'User':
                 $entity = $this->objectManager->getRepository('AcmeDemoBundle:User')
-                    ->find($identifier);
+                    ->find($identifier)
+                ;
                 break;
             case 'Car':
                 list($brand, $model) = $identifier = explode('-', $identifier);
 
                 $entity = $this->objectManager
                     ->getRepository('AcmeDemoBundle:Car')
-                    ->find(array(
-                        'brand' => $brand,
-                        'model' => $model,
-                    ));
+                    ->findBy(
+                        array(
+                            'brand' => $brand,
+                            'model' => $model,
+                        )
+                    )
+                ;
                 break;
             default:
                 throw new \LogicException('WTF');

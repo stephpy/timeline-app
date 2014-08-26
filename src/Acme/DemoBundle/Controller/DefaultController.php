@@ -9,7 +9,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Acme\DemoBundle\Form\Model\Action;
 use Acme\DemoBundle\Form\Type\AddActionFormType;
-use Acme\DemoBundle\Form\Handler\AddActionFormHandler;
 
 class DefaultController extends Controller
 {
