@@ -19,7 +19,7 @@ class Timeline extends BaseTimeline
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Action")
+     * @ORM\ManyToOne(targetEntity="Action", inversedBy="timelines")
      * @ORM\JoinColumn(name="action_id", referencedColumnName="id")
      */
     protected $action;

@@ -8,13 +8,15 @@ Timeline demo application
 
 Use it ?
 
-```
+```bash
 composer install
 # edit app/config/parameters.yml file
-./app/console doctrine:database:create
-./app/console doctrine:migrations:migrate
+php app/console doctrine:database:create
+php app/console doctrine:schema:update --force
+php app/console doctrine:migrations:migrate -n
+php -S localhost:8000 -t web
 ```
 
-Go on "/".
+Go on "/app_dev.php"
 
 If you have any suggestion or improvement, feel free to contact me or create an issue.

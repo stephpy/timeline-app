@@ -6,12 +6,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-/**
- * AddActionFormType
- *
- * @uses AbstractType
- * @author Stephane PY <py.stephane1@gmail.com>
- */
 class AddActionFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -59,5 +53,4 @@ class AddActionFormType extends AbstractType
     {
         return 'acme_demobundle_action_type';
     }
-
 }

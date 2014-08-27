@@ -10,12 +10,6 @@ use Spy\Timeline\Spread\Entry\Entry;
 use Acme\DemoBundle\Entity\Car;
 use Acme\DemoBundle\Entity\User;
 
-/**
- * Spread
- *
- * @uses SpreadInterface
- * @author Stephane PY <py.stephane1@gmail.com>
- */
 class Spread implements SpreadInterface
 {
     CONST USER_CLASS = 'Acme\DemoBundle\Entity\User';
@@ -34,13 +28,13 @@ class Spread implements SpreadInterface
      */
     public function process(ActionInterface $action, EntryCollection $coll)
     {
-        $chuck  = new EntryUnaware(self::USER_CLASS, 1);
-        $vic    = new EntryUnaware(self::USER_CLASS, 2);
+        $chuck = new EntryUnaware(self::USER_CLASS, 1);
+        $vic = new EntryUnaware(self::USER_CLASS, 2);
         $walter = new EntryUnaware(self::USER_CLASS, 3);
 
         $coll->add($chuck); // chuck is added becase he's aware of ALL
 
-        $subject    = $action->getSubject();
+        $subject = $action->getSubject();
         $complement = $action->getComponent('complement');
         if (is_object($complement) && $complement->getModel() == self::USER_CLASS) {
             $coll->add(new Entry($complement));
@@ -63,7 +57,7 @@ class Spread implements SpreadInterface
 
     protected function hasCar($action)
     {
-        $subject    = $action->getSubject();
+        $subject = $action->getSubject();
         $complement = $action->getComponent('complement');
 
         return $subject->getModel() == self::CAR_CLASS || (is_object($complement) && $complement->getModel() == self::CAR_CLASS);
@@ -71,21 +65,22 @@ class Spread implements SpreadInterface
 
     public function vicIsInAction($action)
     {
-        $subject    = $action->getSubject();
+        $subject = $action->getSubject();
         $complement = $action->getComponent('complement');
 
         return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 2) ||
-            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 2);
-
+            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 2)
+        ;
     }
 
     public function walterIsInAction($action)
     {
-        $subject    = $action->getSubject();
+        $subject = $action->getSubject();
         $complement = $action->getComponent('complement');
 
         return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 3) ||
-            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 3);
+            (is_object($complement) && $complement->getModel() == self::USER_CLASS && $complement->getIdentifier() == 3)
+        ;
     }
 
     public function isDrive($action)
