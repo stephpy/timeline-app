@@ -18,8 +18,8 @@
         "doctrine/migrations": "~1.0@dev",
         "mopa/bootstrap-bundle": "~2.3.1",
         "twbs/bootstrap": "v2.3.2",
-        "stephpy/TimelineBundle": "dev-master@dev",
-        "stephpy/timeline": "dev-master@dev"
+        "stephpy/timeline": "dev-master@dev",
+        "stephpy/TimelineBundle": "dev-master@dev"
     },
     "scripts": {
         "post-install-cmd": [
