@@ -79,7 +79,7 @@ class AddActionFormHandler
 
                 $entity = $this->objectManager
                     ->getRepository('AcmeDemoBundle:Car')
-                    ->findBy(
+                    ->findOneBy(
                         array(
                             'brand' => $brand,
                             'model' => $model,
