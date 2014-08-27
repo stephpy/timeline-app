@@ -6,10 +6,10 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% stylesheets filter='?yui_css'
-        '@MopaBootstrapBundle/Resources/bootstrap/docs/assets/css/bootstrap.css'
-        'css/styles.css'
+            '@MopaBootstrapBundle/Resources/bootstrap/docs/assets/css/bootstrap.css'
+            'css/styles.css'
         %}
-        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
         {% endstylesheets %}
     </head>
     <body>
@@ -21,7 +21,6 @@
                 {% block content %}{% endblock content %}
             </div>
         {% endblock %}
-
         {% block javascripts %}
         {% endblock %}
     </body>
