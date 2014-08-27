@@ -8,7 +8,7 @@ Timeline demo application
 
 Use it ?
 
-```
+```bash
 composer install
 # edit app/config/parameters.yml file
 php app/console doctrine:database:create
