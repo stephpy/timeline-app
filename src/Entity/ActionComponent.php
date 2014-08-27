@@ -19,7 +19,7 @@ class ActionComponent extends BaseActionComponent
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Action")
+     * @ORM\ManyToOne(targetEntity="Action", inversedBy="actionComponents")
      * @ORM\JoinColumn(name="action_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $action;
