@@ -40,7 +40,7 @@ class AddActionFormHandler
             return;
         }
 
-        $data    = $form->getData();
+        $data = $form->getData();
 
         $subject = $this->actionManager->findOrCreateComponent(
             $this->extractComponent($data->subject)
@@ -88,7 +88,7 @@ class AddActionFormHandler
                 ;
                 break;
             default:
-                throw new \LogicException('WTF');
+                throw new \LogicException('Unsupported model');
                 break;
         }
 

@@ -28,13 +28,13 @@ class Spread implements SpreadInterface
      */
     public function process(ActionInterface $action, EntryCollection $coll)
     {
-        $chuck  = new EntryUnaware(self::USER_CLASS, 1);
-        $vic    = new EntryUnaware(self::USER_CLASS, 2);
+        $chuck = new EntryUnaware(self::USER_CLASS, 1);
+        $vic = new EntryUnaware(self::USER_CLASS, 2);
         $walter = new EntryUnaware(self::USER_CLASS, 3);
 
         $coll->add($chuck); // chuck is added becase he's aware of ALL
 
-        $subject    = $action->getSubject();
+        $subject = $action->getSubject();
         $complement = $action->getComponent('complement');
         if (is_object($complement) && $complement->getModel() == self::USER_CLASS) {
             $coll->add(new Entry($complement));
@@ -57,7 +57,7 @@ class Spread implements SpreadInterface
 
     protected function hasCar($action)
     {
-        $subject    = $action->getSubject();
+        $subject = $action->getSubject();
         $complement = $action->getComponent('complement');
 
         return $subject->getModel() == self::CAR_CLASS || (is_object($complement) && $complement->getModel() == self::CAR_CLASS);
@@ -65,7 +65,7 @@ class Spread implements SpreadInterface
 
     public function vicIsInAction($action)
     {
-        $subject    = $action->getSubject();
+        $subject = $action->getSubject();
         $complement = $action->getComponent('complement');
 
         return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 2) ||
@@ -75,7 +75,7 @@ class Spread implements SpreadInterface
 
     public function walterIsInAction($action)
     {
-        $subject    = $action->getSubject();
+        $subject = $action->getSubject();
         $complement = $action->getComponent('complement');
 
         return ($subject->getModel() == self::USER_CLASS && $subject->getIdentifier() == 3) ||
